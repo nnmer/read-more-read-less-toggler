@@ -58,19 +58,20 @@ export const ReadMoreToggler = ({
 
   const ReadMoreButton = () =>
     isParagraphExceed && (
-      <ReadMoreWrapper onClick={toggleHandler} buttonColor={buttonColor}>
+      <ReadMoreWrapper onClick={toggleHandler} buttonColor={buttonColor} className="read-more-toggler">
         <Caret collapse={isOverflow} />
         {readMore ? readLessText : readMoreText}
       </ReadMoreWrapper>
     )
 
   return (
-    <div>
+    <div className="read-more-wrapper">
       <Paragraph
         collapse={isOverflow}
         paragraphHeight={readMore ? `${paragraphScrollHeight}px` : `${paragraphCollapseHeight}px`}
         gradientColor={isOverflow ? gradientColor : false}
         ref={paragraphRef}
+        className="read-more-content"
       >
         {children}
       </Paragraph>
